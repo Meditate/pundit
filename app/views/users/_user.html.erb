@@ -1,0 +1,14 @@
+<td>
+  <%= link_to user.email, user%>
+</td>
+<td>
+  <%=simple_form_for(user) do |f| %>
+    <%=f.input :role, collection: (User.roles.keys).map{|role| [role.titleize,role]}, label:false %>
+    <td>
+    <%=f.submit class: 'btn btn-default' %>
+    </td>
+    <%end%>
+</td>
+<td>
+  <%=link_to "Delete user",user_path(user), :data => {:confirm => 'Are you sure?'}, :method => :delete, :class => 'btn btn-dangerous'  %>
+</td>
