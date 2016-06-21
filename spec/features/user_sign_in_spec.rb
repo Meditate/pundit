@@ -1,8 +1,12 @@
 require 'rails_helper'
 
-feature 'sign_in' do
+feature 'Sign_in', :devise do
 
   let(:user) {create(:user)}
+
+  before(:each) do
+    logout(:user)
+  end
 
   scenario 'user can not sign in if not registered' do
     signin('invalid@example.com','invalidpass')

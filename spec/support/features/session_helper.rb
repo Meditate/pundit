@@ -9,5 +9,8 @@ module Features
         click_button 'Log in'
       end
 
+      #def sign_out
+      #  visit destroy_user_session_path
+      #end
   end
 end
