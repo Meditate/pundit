@@ -44,7 +44,7 @@ describe UserPolicy do
     it 'prevents destroying id not an damin' do
       expect(subject).not_to permit(current_user,current_user)
     end
-    
+
     it 'allows destroying if an admin' do
       expect(subject).to permit(admin,other_user)
     end
