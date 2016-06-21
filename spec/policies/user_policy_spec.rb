@@ -29,4 +29,24 @@ describe UserPolicy do
       expect(subject).to permit(admin)
     end
   end
+
+  permissions :update? do
+    it 'prevents updates if not an admin' do
+      expect(subject).not_to permit(current_user)
+    end
+
+    it 'allows updates if an admin' do
+      expect(subject).to permit(admin)
+    end
+  end
+
+  permissions :destroy? do
+    it 'prevents destroying id not an damin' do
+      expect(subject).not_to permit(current_user,current_user)
+    end
+    
+    it 'allows destroying if an admin' do
+      expect(subject).to permit(admin,other_user)
+    end
+  end
 end
