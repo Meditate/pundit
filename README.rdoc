@@ -1,4 +1,7 @@
 == Simple application with pundit authorization
+
+Code cleaning coming soon
+
 == Gems I used:
 
 * Pundit
